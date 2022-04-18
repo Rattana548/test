@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('{host}', '{user}', '{password}', '{db_name}');
+$link = mysqli_connect('localhost', 'root', 'VCOgaa28330', 'shop');
 //if connection is not successful you will see text error
 if (!$link) {
        die('Could not connect: ' . mysql_error());
