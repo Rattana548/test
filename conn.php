@@ -1,17 +1,11 @@
 <?php
-
-    $server = 'localhost';
-    $username = 'root';
-    $password = '';
-    $dbname = 'shop';
-
-    try{
-        $con = new PDO("mysql:host=$server;dbname=$dbname",$username,$password);
-        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $a){
-        echo "Connection falied : ". $a->getMessage();
-        exit();
-    }
-
-
+$link = mysqli_connect('{host}', '{user}', '{password}', '{db_name}');
+//if connection is not successful you will see text error
+if (!$link) {
+       die('Could not connect: ' . mysql_error());
+}
+//if connection is successfully you will see message below
+echo 'Connected successfully';
+ 
+mysqli_close($link);
 ?>
